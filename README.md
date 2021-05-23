@@ -1,6 +1,12 @@
 # Best UI Maker Angular Workspace
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.2.13.
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.2.13. This project is containing express to serve the file in production mode and ng-bootstrap to get start with bootstrap 4.6.0.
+
+## Integrations
+
+- `ng-bootstrap` with 4.6.0 version of bootstrap.
+- `express` to serve the file in production mode.
+- `PWA` out of the box Progressive Web Application support
 
 ## Getting started
 

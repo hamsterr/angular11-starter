@@ -25,12 +25,15 @@
             "aot": true,
             "assets": [
               "projects/bestuimaker-angular/src/favicon.ico",
-              "projects/bestuimaker-angular/src/assets"
+              "projects/bestuimaker-angular/src/assets",
+              "projects/bestuimaker-angular/src/manifest.webmanifest"
             ],
             "styles": [
               "projects/bestuimaker-angular/src/styles.scss"
             ],
-            "scripts": []
+            "scripts": [],
+            "serviceWorker": true,
+            "ngswConfigPath": "projects/bestuimaker-angular/ngsw-config.json"
           },
           "configurations": {
             "production": {
@@ -88,7 +91,8 @@
             "karmaConfig": "projects/bestuimaker-angular/karma.conf.js",
             "assets": [
               "projects/bestuimaker-angular/src/favicon.ico",
-              "projects/bestuimaker-angular/src/assets"
+              "projects/bestuimaker-angular/src/assets",
+              "projects/bestuimaker-angular/src/manifest.webmanifest"
             ],
             "styles": [
               "projects/bestuimaker-angular/src/styles.scss"
