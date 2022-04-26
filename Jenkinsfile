@@ -10,7 +10,7 @@ pipeline {
           steps {
             sh 'npm install' 
             sh 'ng  build --prod'
-            sh 'cp ./dist '
+            sh 'cp ./dist /app'
           }
         }
       }
