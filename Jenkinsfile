@@ -1,4 +1,4 @@
-node (label: 'build && linux') {
+node {
   stage('Clean Workspace'){
     cleanWs()
   }
