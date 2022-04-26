@@ -5,8 +5,6 @@ node {
 
   stage("Main build") {
     docker.image('node:latest').pull()
-    docker.image('ismail0352/chrome-node').pull()
-
     stage('Checkout SCM') {
       checkout([$class: 'GitSCM', branches: [[name: 'main']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[url: 'https://github.com/hamsterr/angular11-starter.git']]])
     }
@@ -16,19 +14,10 @@ node {
       stage('Install') {
         sh label:
           'Running npm install',
-        script: '''
-          ls
+        script: '''  
           npm install
         '''
       }
-    }
-
-    stage('Get test dependency') {
-      sh label:
-        'Downloading chrome.json',
-      script: '''
-        wget https://raw.githubusercontent.com/jfrazelle/dotfiles/master/etc/docker/seccomp/chrome.json -O $WORKSPACE/chrome.json
-      '''
     }
 
     stage ('Build') {
