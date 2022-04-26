@@ -1,4 +1,3 @@
-
 node (label: 'build && linux') {
   stage('Clean Workspace'){
     cleanWs()
@@ -43,12 +42,21 @@ node (label: 'build && linux') {
 
     docker.image('ismail0352/chrome-node').inside('--name chrome-node --security-opt seccomp=$WORKSPACE/chrome.json') {
 
+      stage('e2e') {
+        sh label:
+          'Running npm run e2e',
+        script: '''
+          npm run e2e
+        '''
+      }
+    }
     stage ('Build') {
-      docker.image('node:latest').inside {
+      docker.image('node:latets').inside {
         sh label:
           'Running npm run build',
         script: '''
           node --version
+          cd hello-world-node
           npm run build
         '''
       }
