@@ -17,17 +17,8 @@ node {
         sh label:
           'Running npm install',
         script: '''
-          node --version
+          ls
           npm install
-        '''
-      }
-
-      stage('Lint') {
-        sh label:
-          'Running npm run lint',
-        script: '''
-          cd hello-world-node
-          npm run lint
         '''
       }
     }
