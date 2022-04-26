@@ -1,10 +1,13 @@
 pipeline {
-  agent {
-    docker { image 'node:latest' }
-  }
+  agent none
   stages {
-    stage('Install') {
-      steps { sh 'npm install' }
+    stage('Build') {
+      agent {
+          docker { image 'node:latest' }
+      }
+      steps { sh 'npm install' 
+              sh 'npm run-script build'
+      }
     }
 
     stage('Test') {
@@ -16,10 +19,6 @@ pipeline {
             steps { sh 'npm run-script test' }
         }
       }
-    }
-
-    stage('Build') {
-      steps { sh 'npm run-script build' }
     }
   }
 }
